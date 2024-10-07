@@ -7,11 +7,25 @@ table 50100 "CSD Seminar Setup"
     {
         field(1; "Primary Key"; Code[10])
         {
-
+            Caption = 'primary key';
 
         }
         field(2; "Seminar Nos."; Code[20])
         {
+            Caption = 'Seminar No series';
+            TableRelation = "No. Series";
+
+        }
+        field(3; "Seminar Registration  series"; Code[20])
+        {
+            Caption = 'Seminar Registration Series';
+            TableRelation = "No. Series";
+
+        }
+        field(4; "Posted Seminar No"; code[20])
+        {
+            Caption = 'Posted Seminar No';
+            TableRelation = "No. Series";
 
         }
     }
@@ -24,32 +38,6 @@ table 50100 "CSD Seminar Setup"
         }
     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
 
-    var
-        myInt: Integer;
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
 
 }
