@@ -136,7 +136,7 @@ table 50101 "CSD Seminar"
         "Last Date Modified" := Today;
     end;
 
-    procedure AssistEdit(): Boolean
+    procedure AssistEdit(): Boolean;
 
     begin
         with Seminar do begin
