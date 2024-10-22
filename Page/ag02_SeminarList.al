@@ -1,49 +1,33 @@
-page 50101 "CSD Seminar Card"
+page 50102 "CSD Seminar List"
 {
-    PageType = Card;
-    //ApplicationArea = All;
-    //UsageCategory = Administration;
+    PageType = List;
+    ApplicationArea = All;
+    UsageCategory = Lists;
     SourceTable = "CSD Seminar";
+    Editable = false;
+    CardPageId = 50101;
 
     layout
     {
         area(Content)
         {
-            group(Genaral)
+            repeater(GroupName)
             {
                 field("No."; Rec."No.")
                 {
-                    AssistEdit = true;
-
-                    trigger OnAssistEdit();
-
-                    begin
-                        if Rec.AssistEdit() then
-                            CurrPage.Update();
-                    end;
-                }
-                field(Name; Rec.Name)
-                {
 
                 }
-                field("Search Name"; Rec."Search Name") { }
+                field(Name; Rec.Name) { }
                 field("Seminar Duration"; Rec."Seminar Duration") { }
+                field("Seminar Price "; Rec."Seminar Price ") { }
                 field("Minimum Participants"; Rec."Minimum Participants") { }
                 field("Maximum Participants"; Rec."Maximum Participants") { }
-                field(Blocked; Rec.Blocked) { }
-                field("Last Date Modified"; Rec."Last Date Modified") { }
-
-            }
-            group(Invoicing)
-            {
-                field("Gen. Prod . Psoting group"; Rec."Gen. Prod . Psoting group") { }
-                field("VAT Prod. Psoting Group"; Rec."VAT Prod. Psoting Group") { }
-                field("Seminar Price "; Rec."Seminar Price ") { }
 
             }
         }
-        area(FactBoxes)
+        area(Factboxes)
         {
+
             systempart("Links"; Links)
             {
 
@@ -74,6 +58,4 @@ page 50101 "CSD Seminar Card"
             }
         }
     }
-
-
 }
